@@ -3,249 +3,283 @@
 <head>
     <meta charset=\"UTF-8\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-    <title>Dana G. Moot II - Maya Archaeology Portfolio</title>
+    <title>Dana G. Moot II</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
         body {
-            font-family: 'Georgia', serif;
-            line-height: 1.6;
-            background: linear-gradient(135deg, #f5e6d3 0%, #e8dcc6 100%);
-            color: #333;
-            min-height: 100vh;
+            margin: 0;
+            font-family: 'Times New Roman', serif;
+            background: linear-gradient(to bottom, #f5e6d3, #e8d5b7);
+            color: #2c1810;
         }
-        
+
         .header {
             background: #8b4513;
-            padding: 1rem 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-        
+
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 2rem;
+            padding: 0 20px;
         }
-        
+
         .logo {
             color: #f5e6d3;
-            font-size: 1.5rem;
+            font-size: 24px;
             font-weight: bold;
+            text-decoration: none;
         }
-        
-        .nav-links {
+
+        .nav {
             display: flex;
-            gap: 2rem;
+            gap: 30px;
             list-style: none;
+            margin: 0;
+            padding: 0;
         }
-        
-        .nav-links a {
+
+        .nav a {
             color: #f5e6d3;
             text-decoration: none;
-            padding: 0.5rem 1rem;
+            font-size: 16px;
+            padding: 8px 16px;
             border-radius: 4px;
-            transition: background-color 0.3s;
+            transition: background 0.3s;
         }
-        
-        .nav-links a:hover {
-            background-color: rgba(245, 230, 211, 0.1);
+
+        .nav a:hover {
+            background: rgba(245, 230, 211, 0.1);
         }
-        
-        .hero {
+
+        .hero-section {
+            padding: 60px 20px;
             text-align: center;
-            padding: 4rem 2rem;
-            background: linear-gradient(135deg, #f5e6d3 0%, #e8dcc6 100%);
-        }
-        
-        .profile-img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            margin: 0 auto 2rem;
-            border: 4px solid #8b4513;
-            object-fit: cover;
-        }
-        
-        .hero h1 {
-            font-size: 3rem;
-            color: #8b4513;
-            margin-bottom: 0.5rem;
-        }
-        
-        .hero .subtitle {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 1rem;
-        }
-        
-        .hero .description {
-            max-width: 800px;
-            margin: 0 auto 2rem;
-            font-size: 1.1rem;
-            color: #555;
-        }
-        
-        .cta-button {
-            background: #cd853f;
-            color: white;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 6px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: background-color 0.3s;
-            margin: 0.5rem;
-        }
-        
-        .cta-button:hover {
-            background: #b8722f;
-        }
-        
-        .section {
-            padding: 3rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
-        
-        .section h2 {
-            font-size: 2.5rem;
+
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 4px solid #cd853f;
+            margin-bottom: 30px;
+            object-fit: cover;
+        }
+
+        .hero-title {
+            font-size: 48px;
             color: #8b4513;
-            text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 10px;
+            font-weight: normal;
         }
-        
-        .content-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 8px;
         }
-        
-        .content-card {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+
+        .hero-location {
+            font-size: 18px;
+            color: #888;
+            margin-bottom: 30px;
         }
-        
-        .content-card h3 {
-            color: #cd853f;
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
+
+        .hero-description {
+            font-size: 18px;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: #444;
         }
-        
-        .content-card h4 {
-            color: #8b4513;
-            margin-bottom: 0.5rem;
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
         }
-        
-        .education-item {
-            border-left: 4px solid #cd853f;
-            padding-left: 1rem;
-            margin-bottom: 1rem;
-        }
-        
-        .publications-list {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 2rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-        }
-        
-        .publication-item {
-            background: #f9f9f9;
-            padding: 1.5rem;
-            margin-bottom: 1rem;
+
+        .btn {
+            background: #cd853f;
+            color: white;
+            padding: 14px 28px;
+            border: none;
             border-radius: 6px;
-            border-left: 4px solid #cd853f;
+            font-size: 16px;
+            text-decoration: none;
+            transition: background 0.3s;
+            cursor: pointer;
         }
-        
-        .publication-item h4 {
-            color: #8b4513;
-            margin-bottom: 0.5rem;
+
+        .btn:hover {
+            background: #b8722f;
         }
-        
-        .contact-form {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 2rem;
-            border-radius: 8px;
-            max-width: 600px;
+
+        .section {
+            padding: 50px 20px;
+            max-width: 1200px;
             margin: 0 auto;
         }
-        
-        .form-group {
-            margin-bottom: 1rem;
+
+        .section-title {
+            font-size: 36px;
+            color: #8b4513;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: normal;
         }
-        
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .card-title {
+            color: #cd853f;
+            font-size: 22px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .card-subtitle {
+            color: #8b4513;
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .education-entry {
+            border-left: 4px solid #cd853f;
+            padding-left: 15px;
+            margin-bottom: 20px;
+        }
+
+        .publications-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .publication {
+            background: #f8f5f0;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #cd853f;
+        }
+
+        .pub-title {
+            color: #8b4513;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .pub-authors {
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .pub-details {
+            color: #888;
+            font-style: italic;
+        }
+
+        .gallery-section {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .gallery-description {
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
         .form-group label {
             display: block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 8px;
             color: #555;
             font-weight: bold;
         }
-        
+
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 1rem;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            font-family: inherit;
         }
-        
+
         .form-group textarea {
             height: 120px;
             resize: vertical;
         }
-        
+
         .footer {
             background: #8b4513;
             color: #f5e6d3;
             text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
+            padding: 30px 20px;
+            margin-top: 50px;
         }
-        
-        .gallery-link {
-            text-align: center;
-            margin: 2rem 0;
-        }
-        
-        .gallery-button {
-            background: #cd853f;
-            color: white;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 1.1rem;
-            display: inline-block;
-            transition: background-color 0.3s;
-        }
-        
-        .gallery-button:hover {
-            background: #b8722f;
-        }
-        
+
         @media (max-width: 768px) {
-            .nav-links {
+            .nav {
                 display: none;
             }
-            
-            .hero h1 {
-                font-size: 2rem;
+            .hero-title {
+                font-size: 32px;
             }
-            
-            .content-grid {
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .cards-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -254,55 +288,53 @@
 <body>
     <header class=\"header\">
         <div class=\"nav-container\">
-            <div class=\"logo\">Dana G. Moot II</div>
-            <nav>
-                <ul class=\"nav-links\">
-                    <li><a href=\"#home\">Home</a></li>
-                    <li><a href=\"#about\">About</a></li>
-                    <li><a href=\"#research\">Research</a></li>
-                    <li><a href=\"#publications\">Publications</a></li>
-                    <li><a href=\"#gallery\">Gallery</a></li>
-                    <li><a href=\"#teaching\">Teaching</a></li>
-                    <li><a href=\"#awards\">Awards</a></li>
-                    <li><a href=\"#contact\">Contact</a></li>
-                </ul>
-            </nav>
+            <a href=\"#home\" class=\"logo\">Dana G. Moot II</a>
+            <ul class=\"nav\">
+                <li><a href=\"#home\">Home</a></li>
+                <li><a href=\"#about\">About</a></li>
+                <li><a href=\"#research\">Research</a></li>
+                <li><a href=\"#publications\">Publications</a></li>
+                <li><a href=\"#gallery\">Gallery</a></li>
+                <li><a href=\"#teaching\">Teaching</a></li>
+                <li><a href=\"#awards\">Awards</a></li>
+                <li><a href=\"#contact\">Contact</a></li>
+            </ul>
         </div>
     </header>
 
-    <section id=\"home\" class=\"hero\">
-        <img src=\"https://customer-assets.emergentagent.com/job_6bf9526c-a37f-478f-a1ea-efb9ada97ba3/artifacts/2pm863ea_profile%20pic.jpg\" 
-             alt=\"Dana G. Moot II\" class=\"profile-img\">
-        <h1>Dana G. Moot II</h1>
-        <div class=\"subtitle\">PhD Candidate in Anthropology</div>
-        <div class=\"subtitle\">University of Alabama • Tuscaloosa, AL</div>
-        <div class=\"description\">
+    <section id=\"home\" class=\"hero-section\">
+        <img src=\"https://customer-assets.emergentagent.com/job_6bf9526c-a37f-478f-a1ea-efb9ada97ba3/artifacts/2pm863ea_profile%20pic.jpg\" alt=\"Dana G. Moot II\" class=\"profile-image\">
+        <h1 class=\"hero-title\">Dana G. Moot II</h1>
+        <div class=\"hero-subtitle\">PhD Candidate in Anthropology</div>
+        <div class=\"hero-location\">University of Alabama • Tuscaloosa, AL</div>
+        <div class=\"hero-description\">
             Bridging art historical methodology with archaeological practice to reconstruct ancient Maya political and social contexts. My research focuses on ceramic analysis, epigraphy, and the emergence of regional artistic styles during the Classic period.
         </div>
-        <a href=\"#research\" class=\"cta-button\">View Research</a>
-        <a href=\"#contact\" class=\"cta-button\">Get in Touch</a>
+        <div class=\"cta-buttons\">
+            <a href=\"#research\" class=\"btn\">View Research</a>
+            <a href=\"#contact\" class=\"btn\">Get in Touch</a>
+        </div>
     </section>
 
     <section id=\"about\" class=\"section\">
-        <h2>About</h2>
-        <div class=\"content-grid\">
-            <div class=\"content-card\">
-                <h3>Background</h3>
+        <h2 class=\"section-title\">About</h2>
+        <div class=\"cards-grid\">
+            <div class=\"card\">
+                <h3 class=\"card-title\">Background</h3>
                 <p>PhD Candidate in Anthropology at the University of Alabama, specializing in Maya archaeology with expertise in ceramic analysis, epigraphy, and regional artistic styles. My research bridges art historical methodology with archaeological practice to reconstruct ancient Maya political and social contexts from both excavated and looted ceramic collections.</p>
             </div>
-            <div class=\"content-card\">
-                <h3>Education</h3>
-                <div class=\"education-item\">
-                    <h4>PhD in Anthropology (In Progress)</h4>
-                    <p>University of Alabama, 2022-Present (Candidacy 2025)<br>
-                    Focus: Archaeology of Complex Societies</p>
+            <div class=\"card\">
+                <h3 class=\"card-title\">Education</h3>
+                <div class=\"education-entry\">
+                    <h4 class=\"card-subtitle\">PhD in Anthropology (In Progress)</h4>
+                    <p>University of Alabama, 2022-Present (Candidacy 2025)<br>Focus: Archaeology of Complex Societies</p>
                 </div>
-                <div class=\"education-item\">
-                    <h4>Master of Arts in Art (with Distinction)</h4>
+                <div class=\"education-entry\">
+                    <h4 class=\"card-subtitle\">Master of Arts in Art (with Distinction)</h4>
                     <p>California State University, Chico, 2021</p>
                 </div>
-                <div class=\"education-item\">
-                    <h4>Bachelor of Arts in Anthropology & Latin American Studies</h4>
+                <div class=\"education-entry\">
+                    <h4 class=\"card-subtitle\">Bachelor of Arts in Anthropology & Latin American Studies</h4>
                     <p>California State University, Chico, 2018</p>
                 </div>
             </div>
@@ -310,16 +342,16 @@
     </section>
 
     <section id=\"research\" class=\"section\">
-        <h2>Research</h2>
-        <div class=\"content-grid\">
-            <div class=\"content-card\">
-                <h3>Saxche Orange Polychromes and Regional Style Development</h3>
+        <h2 class=\"section-title\">Research</h2>
+        <div class=\"cards-grid\">
+            <div class=\"card\">
+                <h3 class=\"card-title\">Saxche Orange Polychromes and Regional Style Development</h3>
                 <p>Investigating the emergence and evolution of regional ceramic styles during the Early-Late Classic transition at Maya sites in the Holmul region.</p>
                 <p><strong>Methodology:</strong> Formal analysis, Paleographic scrutiny, Comparative iconography</p>
                 <p><em>Status: Ongoing</em></p>
             </div>
-            <div class=\"content-card\">
-                <h3>Political Identity and Cultural Negotiation at La Sufricaya</h3>
+            <div class=\"card\">
+                <h3 class=\"card-title\">Political Identity and Cultural Negotiation at La Sufricaya</h3>
                 <p>Examining how political and cultural identities were negotiated in public and residential contexts during the Classic Maya transition period.</p>
                 <p><strong>Collaboration:</strong> With Alexandre Tokovinine and Cynthia Hannold</p>
                 <p><em>Status: Analysis Phase</em></p>
@@ -328,83 +360,85 @@
     </section>
 
     <section id=\"publications\" class=\"section\">
-        <h2>Publications</h2>
-        <div class=\"publications-list\">
-            <h3 style=\"color: #cd853f; margin-bottom: 1.5rem;\">Recent Publications</h3>
-            <div class=\"publication-item\">
-                <h4>Defining the Style of Holmul Polychromes at the Early-Late Classic Transition</h4>
-                <p>Dana G. Moot II, Alejandro Patiño-Contreras, Alexandre Tokovinine, and Michael Callaghan</p>
-                <p><em>In preparation for publication, 2025</em></p>
+        <h2 class=\"section-title\">Publications</h2>
+        <div class=\"publications-container\">
+            <h3 class=\"card-title\">Recent Publications</h3>
+            <div class=\"publication\">
+                <div class=\"pub-title\">Defining the Style of Holmul Polychromes at the Early-Late Classic Transition</div>
+                <div class=\"pub-authors\">Dana G. Moot II, Alejandro Patiño-Contreras, Alexandre Tokovinine, and Michael Callaghan</div>
+                <div class=\"pub-details\">In preparation for publication, 2025</div>
             </div>
-            <div class=\"publication-item\">
-                <h4>Bivalence of Grapheme 1C2</h4>
-                <p>Dana G. Moot II, Matthew Looper, and Yuriy Polyukhovych</p>
-                <p><em>Glyph Dwellers Report 92, 2024</em></p>
+            <div class=\"publication\">
+                <div class=\"pub-title\">Bivalence of Grapheme 1C2</div>
+                <div class=\"pub-authors\">Dana G. Moot II, Matthew Looper, and Yuriy Polyukhovych</div>
+                <div class=\"pub-details\">Glyph Dwellers Report 92, 2024</div>
             </div>
-            <div class=\"publication-item\">
-                <h4>Smoking Monkeys, Drunken Jaguars: A Formal Study of El Zotz-style Ceramics</h4>
-                <p>Master's Thesis, California State University, Chico, 2021</p>
-                <p><a href=\"https://www.mesoweb.com/theses/Moot2021.pdf\" target=\"_blank\" style=\"color: #cd853f; text-decoration: none;\">View PDF →</a></p>
+            <div class=\"publication\">
+                <div class=\"pub-title\">Smoking Monkeys, Drunken Jaguars: A Formal Study of El Zotz-style Ceramics</div>
+                <div class=\"pub-authors\">Master's Thesis, California State University, Chico, 2021</div>
+                <div class=\"pub-details\">
+                    <a href=\"https://www.mesoweb.com/theses/Moot2021.pdf\" target=\"_blank\" style=\"color: #cd853f; text-decoration: none;\">View PDF →</a>
+                </div>
             </div>
         </div>
     </section>
 
     <section id=\"gallery\" class=\"section\">
-        <h2>Illustration Gallery</h2>
-        <div class=\"gallery-link\">
-            <p style=\"font-size: 1.2rem; margin-bottom: 2rem; text-align: center;\">
+        <h2 class=\"section-title\">Illustration Gallery</h2>
+        <div class=\"gallery-section\">
+            <div class=\"gallery-description\">
                 View my collection of 50+ archaeological and academic illustrations
-            </p>
-            <a href=\"https://www.dropbox.com/scl/fo/ds4vvx7gi6t3iaaj7ecis/ADLDyKQB3F6b9HZls9znY_0?rlkey=eroxjec3eoq56e8gg4shhbndi&st=5m9y7mrm&dl=0\" 
-               target=\"_blank\" class=\"gallery-button\">
+            </div>
+            <a href=\"https://www.dropbox.com/scl/fo/ds4vvx7gi6t3iaaj7ecis/ADLDyKQB3F6b9HZls9znY_0?rlkey=eroxjec3eoq56e8gg4shhbndi&st=5m9y7mrm&dl=0\" target=\"_blank\" class=\"btn\">
                 View Gallery
             </a>
         </div>
     </section>
 
     <section id=\"teaching\" class=\"section\">
-        <h2>Teaching</h2>
-        <div class=\"content-card\">
-            <h3>Current Position</h3>
-            <h4>Instructor of Record & Graduate Teaching Assistant</h4>
-            <p>University of Alabama, 2022-Present</p>
-        </div>
-        <div class=\"content-card\">
-            <h3>Teaching Philosophy</h3>
-            <p>I teach with an inquiry-based, constructivist approach that keeps evidence at the center. Students form durable understanding when they test ideas against what they already know, confront gaps or doubts in the record, and revise their claims with clear criteria in view. This produces flexible thinkers who can adjust when new data or methods appear, rather than repeat conclusions that no longer fit. I plan courses with outcomes set first and align readings and assessments to those ends.</p>
+        <h2 class=\"section-title\">Teaching</h2>
+        <div class=\"cards-grid\">
+            <div class=\"card\">
+                <h3 class=\"card-title\">Current Position</h3>
+                <h4 class=\"card-subtitle\">Instructor of Record & Graduate Teaching Assistant</h4>
+                <p>University of Alabama, 2022-Present</p>
+            </div>
+            <div class=\"card\">
+                <h3 class=\"card-title\">Teaching Philosophy</h3>
+                <p>I teach with an inquiry-based, constructivist approach that keeps evidence at the center. Students form durable understanding when they test ideas against what they already know, confront gaps or doubts in the record, and revise their claims with clear criteria in view. This produces flexible thinkers who can adjust when new data or methods appear.</p>
+            </div>
         </div>
     </section>
 
     <section id=\"awards\" class=\"section\">
-        <h2>Awards & Honors</h2>
-        <div class=\"content-grid\">
-            <div class=\"content-card\">
-                <h3>Recent Awards</h3>
-                <div class=\"education-item\">
+        <h2 class=\"section-title\">Awards & Honors</h2>
+        <div class=\"cards-grid\">
+            <div class=\"card\">
+                <h3 class=\"card-title\">Recent Awards</h3>
+                <div class=\"education-entry\">
                     <strong>David and Elizabeth DeJarnette Endowed Scholarship in Anthropology</strong><br>
-                    University of Alabama, 2025<br>
-                    <em>Awarded annually to a student of promise conducting research on prehistoric Moundville or Mesoamerica</em>
+                    University of Alabama, 2025
                 </div>
-                <div class=\"education-item\">
+                <div class=\"education-entry\">
                     <strong>Graduate School Conference and Travel Grant</strong><br>
                     University of Alabama, 2024-2025
                 </div>
-                <div class=\"education-item\">
+                <div class=\"education-entry\">
                     <strong>Vernon J. Knight Endowed Scholarship</strong><br>
                     University of Alabama, 2023-2024
                 </div>
             </div>
-            <div class=\"content-card\">
-                <h3>Honor Societies</h3>
-                <div class=\"education-item\">
+            <div class=\"card\">
+                <h3 class=\"card-title\">Honor Societies</h3>
+                <div class=\"education-entry\">
                     <strong>Lambda Alpha Anthropology Honors Society</strong><br>
                     2023
                 </div>
-                <div class=\"education-item\">
+                <div class=\"education-entry\">
                     <strong>Phi Alpha Theta History Honors Society</strong><br>
                     2018
                 </div>
-                <div class=\"education-item\">
+                <div class=\"education-entry\">
                     <strong>Delta Phi Alpha German Language Honors Society</strong><br>
                     2018
                 </div>
@@ -413,16 +447,16 @@
     </section>
 
     <section id=\"contact\" class=\"section\">
-        <h2>Contact</h2>
-        <div class=\"content-card\" style=\"max-width: 600px; margin: 0 auto 2rem;\">
-            <h3>Get in Touch</h3>
-            <p><strong>Email:</strong> <a href=\"mailto:dgmoot@crimson.ua.edu\" style=\"color: #cd853f; text-decoration: none;\">dgmoot@crimson.ua.edu</a></p>
+        <h2 class=\"section-title\">Contact</h2>
+        <div class=\"contact-info\">
+            <h3 class=\"card-title\">Get in Touch</h3>
+            <p><strong>Email:</strong> <a href=\"mailto:dgmoot@crimson.ua.edu\" style=\"color: #cd853f;\">dgmoot@crimson.ua.edu</a></p>
             <p><strong>Office:</strong> 23 ten Hoor Hall, University of Alabama</p>
             <p><strong>Department:</strong> Department of Anthropology</p>
         </div>
         
         <form action=\"https://formspree.io/f/xeoqkqzd\" method=\"POST\" class=\"contact-form\">
-            <h3 style=\"color: #cd853f; margin-bottom: 1.5rem;\">Send a Message</h3>
+            <h3 class=\"card-title\">Send a Message</h3>
             <div class=\"form-group\">
                 <label for=\"name\">Name</label>
                 <input type=\"text\" id=\"name\" name=\"name\" required>
@@ -439,7 +473,7 @@
                 <label for=\"message\">Message</label>
                 <textarea id=\"message\" name=\"message\" required></textarea>
             </div>
-            <button type=\"submit\" class=\"cta-button\" style=\"width: 100%;\">Send Message</button>
+            <button type=\"submit\" class=\"btn\" style=\"width: 100%;\">Send Message</button>
         </form>
     </section>
 
